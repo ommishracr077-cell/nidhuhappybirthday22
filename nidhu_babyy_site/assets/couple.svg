@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8" />
+    </filter>
+  </defs>
+  <!-- Two cute faces leaning in for a kiss -->
+  <circle cx="110" cy="90" r="48" fill="#ffd8e1" stroke="#f39" stroke-width="2"/>
+  <circle cx="210" cy="90" r="48" fill="#d8f1ff" stroke="#39f" stroke-width="2"/>
+  <!-- Eyes -->
+  <path d="M95 80 q8 6 16 0" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M225 80 q-8 6 -16 0" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Blush -->
+  <circle cx="92" cy="98" r="6" fill="#ff8fb3" filter="url(#soft)"/>
+  <circle cx="228" cy="98" r="6" fill="#8fc7ff" filter="url(#soft)"/>
+  <!-- Lips (animated via CSS) -->
+  <path id="lipL" d="M150 90 q10 8 18 0" stroke="#ff6fb7" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path id="lipR" d="M152 92 q10 -8 18 0" stroke="#6fb7ff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Little heart between them -->
+  <path d="M160 88 c-4 -8 -18 -6 -18 4 0 10 18 18 18 18s18-8 18-18c0-10 -14-12 -18-4z" fill="#ff6fb7"/>
+</svg>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Nidhu Babyy 🎀</title>
+  <meta name="description" content="A cute LDR birthday journey for Nidhu Babyy — with hearts, teddies, a mini game, and lots of love!" />
+  <link rel="preload" href="assets/heart.svg" as="image">
+  <link rel="preload" href="assets/teddy.svg" as="image">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="floating-bg"></div>
+
+  <div class="container">
+    <div class="card">
+      <div class="badge"><span id="badgeStep">Page 1 / 9</span></div>
+
+      <!-- 1. Welcome Page -->
+      <section class="page" id="welcome">
+        <h1 class="big-title">Happy Birthday, my Nidhu Babyy 🧸💖</h1>
+        <p class="sparkle">Even though we’re miles apart, my love is right here with you.</p>
+        <div class="actions">
+          <button class="btn" onclick="nextPage()">Start the Journey ✨</button>
+        </div>
+      </section>
+
+      <!-- 2. Birthday Wish -->
+      <section class="page" id="wish" style="display:none">
+        <h1 class="big-title sparkle">Happy Birthday, Nidhu Babyy 🎂</h1>
+        <p>Make a wish… and let today sparkle just like you ✨</p>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 3. Why You're Amazing -->
+      <section class="page" id="why" style="display:none">
+        <h2 class="sparkle">Why you’re amazing 🌸</h2>
+        <ul>
+          <li>Your smile is my sunshine ☀️.</li>
+          <li>Your voice is my comfort 🎶.</li>
+          <li>Your love is my forever 🫶.</li>
+        </ul>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 4. Memory Lane Gallery -->
+      <section class="page" id="gallery" style="display:none">
+        <h2 class="sparkle">Memory Lane 📸</h2>
+        <p>Some of our favorite moments together:</p>
+        <div class="gallery">
+          <img src="photos/photo1.jpg" alt="Memory 1">
+          <img src="photos/photo2.jpg" alt="Memory 2">
+          <img src="photos/photo3.jpg" alt="Memory 3">
+          <img src="photos/photo4.jpg" alt="Memory 4">
+        </div>
+        <small class="hint">Replace the images in the <b>/photos</b> folder with your own (keep the names).</small>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 5. Promises -->
+      <section class="page" id="promises" style="display:none">
+        <h2 class="sparkle">Promises 🤞</h2>
+        <div class="promise">I promise to make you laugh every day.</div>
+        <div class="promise">I promise to love you endlessly.</div>
+        <div class="promise">I promise to hold you close when distance fades away 💕.</div>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 6. The Fun Page (Mini Game) -->
+      <section class="page" id="game" style="display:none">
+        <h2 class="sparkle">Catch the Hearts & Teddies 💖</h2>
+        <p>Tap to catch as many as you can in 20 seconds!</p>
+        <div id="game-area"></div>
+        <div class="actions">
+          <span class="btn ghost">Score: <b id="score">0</b></span>
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 7. Playful Question -->
+      <section class="page question" id="question" style="display:none; position:relative; min-height:260px;">
+        <h2>Nidhu Babyy… will you always be mine? 🥺👉👈</h2>
+        <div class="actions" style="position:relative; width:100%; height:120px;">
+          <button class="btn secondary" onclick="nextPage()">Yes 😍</button>
+          <button class="btn no" id="noBtn">No 😶</button>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+        </div>
+      </section>
+
+      <!-- 8. I Love You Page -->
+      <section class="page" id="love" style="display:none">
+        <div class="marquee"><span> I love you Babyy 💕 · I love you Babyy 💕 · I love you Babyy 💕 · I love you Babyy 💕 · </span></div>
+        <div class="marquee"><span> I love you Babyy 💕 · I love you Babyy 💕 · I love you Babyy 💕 · I love you Babyy 💕 · </span></div>
+        <div class="actions">
+          <button class="btn" onclick="prevPage()">Back</button>
+          <button class="btn secondary" onclick="nextPage()">Next</button>
+        </div>
+      </section>
+
+      <!-- 9. Finale -->
+      <section class="page" id="finale" style="display:none; position:relative; min-height:360px;">
+        <canvas id="confettiCanvas"></canvas>
+        <h2 class="sparkle">This is just the beginning of our forever 🎇</h2>
+        <p>Happy Birthday, my Nidhu Babyy 🎂💖 This may be our first LDR birthday, but I promise it will be the most special of many more to come.</p>
+        <div class="kiss-wrap"><img src="assets/couple.svg" alt="Cute couple kissing"></div>
+        <div class="actions">
+          <button class="btn" onclick="showPage(0)">Replay Journey 🔁</button>
+          <a class="btn secondary" href="#gallery" onclick="showPage(3)">View Gallery 📸</a>
+        </div>
+      </section>
+
+      <div class="nav">
+        <button class="btn ghost" onclick="prevPage()">⟵ Back</button>
+        <button class="btn ghost" onclick="nextPage()">Next ⟶</button>
+      </div>
+
+      <div id="toast" style="position:absolute; left:50%; transform:translateX(-50%); bottom:70px; background:rgba(255,255,255,.95); border:1px solid #fff; padding:8px 14px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08); opacity:0; transition:opacity .3s; font-weight:700;"></div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
